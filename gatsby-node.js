@@ -24,6 +24,8 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
       slug = `/${parsedFilePath.dir}/`;
     }
 
+    slug = parsedFilePath.name;
+
     if (Object.prototype.hasOwnProperty.call(node, "frontmatter")) {
       if (Object.prototype.hasOwnProperty.call(node.frontmatter, "slug"))
         slug = `/${_.kebabCase(node.frontmatter.slug)}`;
@@ -146,6 +148,7 @@ exports.createPages = async ({ graphql, actions }) => {
       component: postPage,
       context: {
         slug: edge.node.fields.slug,
+        postPath: index,
         nexttitle: nextEdge.node.frontmatter.title,
         nextslug: nextEdge.node.fields.slug,
         prevtitle: prevEdge.node.frontmatter.title,

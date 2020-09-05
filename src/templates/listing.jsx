@@ -6,7 +6,7 @@ import { PostListing } from "../components/PostListing/PostListing";
 import SEO from "../components/SEO/SEO";
 import config from "../../data/SiteConfig";
 import "./listing.css";
-
+import 'twin.macro';
 
 function Listing({ data, pageContext }) {
 
@@ -16,12 +16,14 @@ function Listing({ data, pageContext }) {
     <Layout>
       <Helmet title={config.siteTitle} />
       <SEO />
-      <div className="listing-container">
-        <h1>{config.siteTitle}</h1>
+      <div tw="container mx-auto">
+        <h1 tw="py-4 font-black">{config.siteTitle}</h1>
         <div className="posts-container">
           <PostListing postEdges={postEdges} />
         </div>
-        <Pagination pageContext={pageContext} />
+        {(pageContext.pageCount >= 2) &&
+          <Pagination pageContext={pageContext} />
+        }
       </div>
     </Layout>
   );

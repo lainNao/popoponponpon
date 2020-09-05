@@ -6,6 +6,7 @@ import SEO from "../components/SEO/SEO";
 import config from "../../data/SiteConfig";
 import "./b16-tomorrow-dark.css";
 import "./post.css";
+import 'twin.macro';
 
 
 
@@ -26,8 +27,8 @@ export default function PostTemplate({ data, pageContext }){
         </Helmet>
         <SEO postPath={slug} postNode={postNode} postSEO />
         <div>
-          <h1>{post.title}</h1>
-          <div dangerouslySetInnerHTML={{ __html: postNode.html }} />
+          <h1 tw="font-black text-gray-700 text-xl py-5 mb-3 text-center">{post.title}</h1>
+          <div tw="text-sm text-gray-900" dangerouslySetInnerHTML={{ __html: postNode.html }} />
         </div>
       </div>
     </Layout>

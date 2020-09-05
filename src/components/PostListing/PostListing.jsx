@@ -6,7 +6,6 @@ import Masonry from 'react-masonry-css'
 import "./PostListing.css"
 
 export const PostListing = ({ postEdges }) => {
-  console.log(postEdges)
   const PostLinks = () => {
     const postList = [];
 

@@ -18,8 +18,10 @@ export const PostLink = ({ post }) => {
   return (
     <Link to={post.path}>
       <div tw="break-all">
-        <h1 tw="inline  text-lg">{post.title}</h1>
-        <span tw="ml-1 text-xs text-gray-700">（{moment(post.date).format("YYYY-MM-DD")}）</span>
+        <div css={[css`line-height:1.3rem`]}>
+          <h1 tw="inline text-lg">{post.title}</h1>
+          <span tw="ml-1 text-xs text-gray-700">（{moment(post.date).format("YYYY-MM-DD")}）</span>
+        </div>
         <div tw="mt-2 clamp-2 text-xs text-gray-600">{post.excerpt}</div>
       </div>
     </Link>

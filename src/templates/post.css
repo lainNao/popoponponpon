@@ -1,5 +1,6 @@
-.post-meta {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+h1 {
+  font-size: 1.4rem;
+}
+h2 {
+  font-size: 1.2rem;
 }
